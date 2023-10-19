@@ -29,6 +29,7 @@ class _SplashViewState extends State<SplashView>
     animationController.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
