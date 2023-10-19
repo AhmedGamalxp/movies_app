@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:movies_app/core/constants.dart';
 import 'package:movies_app/core/utils/app_router.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent, // status bar color
+  ));
   runApp(const MoviesApp());
 }
 
