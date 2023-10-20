@@ -18,7 +18,8 @@ class PopularSeeMoreListView extends StatelessWidget {
       ),
       body: ListView.separated(
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.only(left: 10, right: 10, top: 90),
+          padding:
+              const EdgeInsets.only(left: 10, right: 10, top: 90, bottom: 10),
           itemBuilder: (context, indext) {
             return const SeeMoreItem();
           },
