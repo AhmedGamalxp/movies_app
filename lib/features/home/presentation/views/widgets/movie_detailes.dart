@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movies_app/core/dummy1.dart';
 import 'package:movies_app/features/home/data/models/movie_detailes_model/movie/genre.detailes.model.dart';
 import 'package:movies_app/features/home/data/models/movie_detailes_model/movie/movie.detailes.model.dart';
 

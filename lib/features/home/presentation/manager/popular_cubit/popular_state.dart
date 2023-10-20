@@ -8,7 +8,7 @@ final class PopularInitial extends PopularCubitState {}
 final class PopularLoading extends PopularCubitState {}
 
 final class PopularSuccess extends PopularCubitState {
-  final List<NowPlayingModel> moviesList;
+  final List<MovieModel> moviesList;
 
   PopularSuccess({required this.moviesList});
 }

@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:movies_app/features/home/data/models/movie_detailes_model/movie/movie.detailes.model.dart';
+import 'package:movies_app/features/home/data/models/movie_model.dart';
 import 'package:movies_app/features/home/data/repos/home_repo.dart';
 
 part 'movie_detailes_state.dart';

@@ -8,7 +8,7 @@ final class TopRatedInitial extends TopRatedState {}
 final class TopRatedLoading extends TopRatedState {}
 
 final class TopRatedSuccess extends TopRatedState {
-  final List<NowPlayingModel> moviesList;
+  final List<MovieModel> moviesList;
 
   TopRatedSuccess({required this.moviesList});
 }

@@ -1,13 +1,12 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movies_app/core/dummy1.dart';
-import 'package:movies_app/features/home/data/models/now.playing.model.dart';
+import 'package:movies_app/features/home/data/models/movie_model.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/movie_list_image.dart';
 
 class SeeMoreItem extends StatelessWidget {
   const SeeMoreItem({super.key, required this.movie});
-  final NowPlayingModel movie;
+  final MovieModel movie;
   @override
   Widget build(BuildContext context) {
     return FadeInUp(

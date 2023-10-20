@@ -1,7 +1,7 @@
-import 'package:movies_app/features/home/data/models/now.playing.model.dart';
+import 'package:movies_app/features/home/data/models/movie_model.dart';
 
-List<NowPlayingModel> moviesList = [
-  NowPlayingModel(
+List<MovieModel> moviesList = [
+  MovieModel(
     backdropPath: "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
     id: 453395,
     overview:
@@ -10,7 +10,7 @@ List<NowPlayingModel> moviesList = [
     title: "Movie Title Movie Title",
     voteAverage: 5,
   ),
-  NowPlayingModel(
+  MovieModel(
     backdropPath: "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
     id: 453395,
     overview:
@@ -19,7 +19,7 @@ List<NowPlayingModel> moviesList = [
     title: "Movie Title",
     voteAverage: 5.0,
   ),
-  NowPlayingModel(
+  MovieModel(
     backdropPath: "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
     id: 453395,
     overview:
@@ -28,7 +28,7 @@ List<NowPlayingModel> moviesList = [
     title: "Movie Title",
     voteAverage: 5.0,
   ),
-  NowPlayingModel(
+  MovieModel(
     backdropPath: "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
     id: 453395,
     overview:
@@ -37,7 +37,7 @@ List<NowPlayingModel> moviesList = [
     title: "Movie Title",
     voteAverage: 5.0,
   ),
-  NowPlayingModel(
+  MovieModel(
     backdropPath: "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
     id: 453395,
     overview:

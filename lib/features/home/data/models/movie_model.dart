@@ -1,4 +1,4 @@
-class NowPlayingModel {
+class MovieModel {
   bool? adult;
   String? backdropPath;
   List<dynamic>? genreIds;
@@ -14,7 +14,7 @@ class NowPlayingModel {
   double? voteAverage;
   int? voteCount;
 
-  NowPlayingModel({
+  MovieModel({
     this.adult,
     this.backdropPath,
     this.genreIds,
@@ -31,8 +31,7 @@ class NowPlayingModel {
     this.voteCount,
   });
 
-  factory NowPlayingModel.fromJson(Map<String, dynamic> json) =>
-      NowPlayingModel(
+  factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
         adult: json['adult'] as bool?,
         backdropPath: json['backdrop_path'] as String?,
         genreIds: json['genre_ids'] as List<dynamic>?,

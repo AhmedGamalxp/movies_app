@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:movies_app/features/home/data/models/now.playing.model.dart';
+import 'package:movies_app/features/home/data/models/movie_model.dart';
 import 'package:movies_app/features/home/data/repos/home_repo.dart';
 
 part 'now_playing_state.dart';

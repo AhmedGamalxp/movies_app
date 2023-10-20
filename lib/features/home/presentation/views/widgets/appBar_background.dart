@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constants.dart';
-import 'package:movies_app/core/dummy1.dart';
 
 class AppBarBackGround extends StatelessWidget {
   const AppBarBackGround({super.key, required this.url});
