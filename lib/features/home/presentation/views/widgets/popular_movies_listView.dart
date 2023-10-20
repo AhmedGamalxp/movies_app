@@ -14,7 +14,7 @@ class PopularMoviesListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<PopularCubitCubit, PopularCubitState>(
       builder: (context, state) {
-        if (state is PopularCubSuccess) {
+        if (state is PopularSuccess) {
           return SizedBox(
             height: 120,
             child: ListView.separated(
@@ -24,7 +24,7 @@ class PopularMoviesListView extends StatelessWidget {
                 itemBuilder: (context, indext) {
                   return MovieListImage(
                     ontap: () {
-                      context.push(AppRouter.kMovieDetailesView);
+                      context.push(AppRouter.kMovieDetailesView,extra: state.moviesList[indext].id);
                     },
                     url: state.moviesList[indext].backdropPath!,
                   );
@@ -36,7 +36,7 @@ class PopularMoviesListView extends StatelessWidget {
                 },
                 itemCount: state.moviesList.length),
           );
-        } else if (state is PopularCubitFailure) {
+        } else if (state is PopularFailure) {
           return CustomErrorWidget(errMassage: state.errMassage);
         } else {
           return const Center(

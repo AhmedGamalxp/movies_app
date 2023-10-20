@@ -6,17 +6,17 @@ import 'package:movies_app/features/home/data/repos/home_repo.dart';
 part 'popular_state.dart';
 
 class PopularCubitCubit extends Cubit<PopularCubitState> {
-  PopularCubitCubit(this.homeRepo) : super(PopularCubitInitial());
+  PopularCubitCubit(this.homeRepo) : super(PopularInitial());
 
   final HomeRepo homeRepo;
 
   Future<void> fetchPopularMovies() async {
-    emit(PopularCubitLoading());
+    emit(PopularLoading());
     var result = await homeRepo.fetchPopularMovies();
     result.fold((failure) {
-      emit(PopularCubitFailure(errMassage: failure.errMessage));
+      emit(PopularFailure(errMassage: failure.errMessage));
     }, (movies) {
-      emit(PopularCubSuccess(moviesList: movies));
+      emit(PopularSuccess(moviesList: movies));
     });
   }
 }

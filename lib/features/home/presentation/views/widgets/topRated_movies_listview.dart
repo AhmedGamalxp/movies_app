@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/dummy1.dart';
+import 'package:movies_app/core/utils/app_router.dart';
 import 'package:movies_app/core/widgets/custom_error_widget.dart';
 import 'package:movies_app/features/home/presentation/manager/top_rated_cubit/top_rated_cubit.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/movie_list_image.dart';
@@ -21,6 +23,10 @@ class TopRatedMoviesListView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, indext) {
                   return MovieListImage(
+                    ontap: () {
+                      context.push(AppRouter.kMovieDetailesView,
+                          extra: state.moviesList[indext].id);
+                    },
                     url: state.moviesList[indext].backdropPath!,
                   );
                 },

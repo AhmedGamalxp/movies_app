@@ -16,17 +16,18 @@ class MoviesSlider extends StatelessWidget {
     return BlocBuilder<NowPlayingCubit, NowPlayingState>(
       builder: (context, state) {
         if (state is NowPlayingSuccess) {
-          return GestureDetector(
-            onTap: () => context.push(AppRouter.kMovieDetailesView),
-            child: CarouselSlider(
-              options: CarouselOptions(
-                // autoPlay: true,
-                // autoPlayInterval: const Duration(seconds: 7),
-                height: 400.0,
-                viewportFraction: 1.0,
-              ),
-              items: state.moviesList.map((item) {
-                return Stack(children: [
+          return CarouselSlider(
+            options: CarouselOptions(
+              autoPlay: true,
+              autoPlayInterval: const Duration(seconds: 7),
+              height: 400.0,
+              viewportFraction: 1.0,
+            ),
+            items: state.moviesList.map((item) {
+              return GestureDetector(
+                onTap: () =>
+                    context.push(AppRouter.kMovieDetailesView, extra: item.id),
+                child: Stack(children: [
                   ShaderMask(
                     shaderCallback: (rect) {
                       return const LinearGradient(
@@ -103,9 +104,9 @@ class MoviesSlider extends StatelessWidget {
                       ),
                     ],
                   ),
-                ]);
-              }).toList(),
-            ),
+                ]),
+              );
+            }).toList(),
           );
         } else if (state is NowPlayingFailure) {
           return CustomErrorWidget(errMassage: state.errMassage);

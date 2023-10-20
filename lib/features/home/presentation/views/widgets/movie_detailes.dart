@@ -2,10 +2,12 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movies_app/core/dummy1.dart';
+import 'package:movies_app/features/home/data/models/movie_detailes_model/movie/genre.detailes.model.dart';
+import 'package:movies_app/features/home/data/models/movie_detailes_model/movie/movie.detailes.model.dart';
 
 class MoviesDetailes extends StatelessWidget {
-  const MoviesDetailes({super.key});
-
+  const MoviesDetailes({super.key, required this.movie});
+  final MovieDetailesModel movie;
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
@@ -15,7 +17,7 @@ class MoviesDetailes extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(moviesList[0].title!,
+            Text(movie.title!,
                 style: GoogleFonts.poppins(
                   fontSize: 23,
                   fontWeight: FontWeight.w700,
@@ -34,7 +36,7 @@ class MoviesDetailes extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4.0),
                   ),
                   child: Text(
-                    moviesList[0].releaseDate!.split('-')[0],
+                    movie.releaseDate!.split('-')[0],
                     style: const TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,
@@ -51,7 +53,7 @@ class MoviesDetailes extends StatelessWidget {
                     ),
                     const SizedBox(width: 4.0),
                     Text(
-                      (moviesList[0].voteAverage! / 2).toStringAsFixed(1),
+                      (movie.voteAverage! / 2).toStringAsFixed(1),
                       style: const TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
@@ -60,7 +62,7 @@ class MoviesDetailes extends StatelessWidget {
                     ),
                     const SizedBox(width: 4.0),
                     Text(
-                      '(${moviesList[0].voteAverage})',
+                      '(${movie.voteAverage})',
                       style: const TextStyle(
                         fontSize: 1.0,
                         fontWeight: FontWeight.w500,
@@ -70,9 +72,9 @@ class MoviesDetailes extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(width: 16.0),
-                const Text(
-                  '88',
-                  style: TextStyle(
+                Text(
+                  _showDuration(movie.runtime!),
+                  style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,
@@ -83,7 +85,7 @@ class MoviesDetailes extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             Text(
-              moviesList[0].overview!,
+              movie.overview!,
               style: const TextStyle(
                 fontSize: 14.0,
                 fontWeight: FontWeight.w400,
@@ -91,10 +93,10 @@ class MoviesDetailes extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8.0),
-            const Text(
-              'Genres: family',
-              style: TextStyle(
-                color: Colors.white70,
+            Text(
+              _showGenres(movie.genres!),
+              style: const TextStyle(
+                color: Colors.white54,
                 fontSize: 12.0,
                 fontWeight: FontWeight.w500,
                 letterSpacing: 1.2,
@@ -104,5 +106,29 @@ class MoviesDetailes extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+String _showGenres(List<Genre> genres) {
+  String result = '';
+  for (var genre in genres) {
+    result += '${genre.name}, ';
+  }
+
+  if (result.isEmpty) {
+    return result;
+  }
+
+  return result.substring(0, result.length - 2);
+}
+
+String _showDuration(int runtime) {
+  final int hours = runtime ~/ 60;
+  final int minutes = runtime % 60;
+
+  if (hours > 0) {
+    return '${hours}h ${minutes}m';
+  } else {
+    return '${minutes}m';
   }
 }

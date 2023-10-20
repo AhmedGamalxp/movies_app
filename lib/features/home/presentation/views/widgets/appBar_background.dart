@@ -5,8 +5,8 @@ import 'package:movies_app/core/constants.dart';
 import 'package:movies_app/core/dummy1.dart';
 
 class AppBarBackGround extends StatelessWidget {
-  const AppBarBackGround({super.key});
-
+  const AppBarBackGround({super.key, required this.url});
+  final String url;
   @override
   Widget build(BuildContext context) {
     return FadeIn(
@@ -31,7 +31,7 @@ class AppBarBackGround extends StatelessWidget {
         blendMode: BlendMode.darken,
         child: CachedNetworkImage(
           width: MediaQuery.of(context).size.width,
-          imageUrl: imageUrl(moviesList[0].backdropPath!),
+          imageUrl: imageUrl(url),
           fit: BoxFit.cover,
         ),
       ),

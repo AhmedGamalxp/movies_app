@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:movies_app/core/errors/failure.dart';
 import 'package:movies_app/core/utils/api_services.dart';
+import 'package:movies_app/features/home/data/models/movie_detailes_model/movie/movie.detailes.model.dart';
 import 'package:movies_app/features/home/data/models/now.playing.model.dart';
 import 'package:movies_app/features/home/data/repos/home_repo.dart';
 
@@ -78,6 +79,28 @@ class HomeRepoImpl implements HomeRepo {
       }
 
       return right(movies);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, MovieDetailesModel>> fetchMovieDetails(
+      int movieId) async {
+    try {
+      var data = await apiService.get(endPoint: '$movieId');
+      MovieDetailesModel movie = MovieDetailesModel.fromJson(data);
+
+      return right(movie);
     } catch (e) {
       if (e is DioException) {
         return left(

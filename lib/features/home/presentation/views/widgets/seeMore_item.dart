@@ -2,11 +2,12 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movies_app/core/dummy1.dart';
+import 'package:movies_app/features/home/data/models/now.playing.model.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/movie_list_image.dart';
 
 class SeeMoreItem extends StatelessWidget {
-  const SeeMoreItem({super.key});
-
+  const SeeMoreItem({super.key, required this.movie});
+  final NowPlayingModel movie;
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
@@ -21,7 +22,7 @@ class SeeMoreItem extends StatelessWidget {
             child: Row(
               children: [
                 MovieListImage(
-                  url: moviesList[0].backdropPath!,
+                  url: movie.backdropPath!,
                 ),
                 const SizedBox(
                   width: 16,
@@ -35,7 +36,7 @@ class SeeMoreItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          moviesList[0].title!,
+                          movie.title!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.poppins(
@@ -59,7 +60,7 @@ class SeeMoreItem extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(4.0),
                               ),
                               child: Text(
-                                moviesList[0].releaseDate!.split('-')[0],
+                                movie.releaseDate!.split('-')[0],
                                 style: const TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w500,
@@ -76,8 +77,7 @@ class SeeMoreItem extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 4.0),
                                 Text(
-                                  (moviesList[0].voteAverage! / 2)
-                                      .toStringAsFixed(1),
+                                  (movie.voteAverage! / 2).toStringAsFixed(1),
                                   style: const TextStyle(
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w500,
@@ -86,7 +86,7 @@ class SeeMoreItem extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 4.0),
                                 Text(
-                                  '(${moviesList[0].voteAverage})',
+                                  '(${movie.voteAverage})',
                                   style: const TextStyle(
                                     fontSize: 1.0,
                                     fontWeight: FontWeight.w500,
@@ -101,7 +101,7 @@ class SeeMoreItem extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(right: 16.0),
                           child: Text(
-                            moviesList[0].overview!,
+                            movie.overview!,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(

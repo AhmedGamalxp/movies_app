@@ -21,7 +21,7 @@ class MovieListImage extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 2.8 / 4,
               child: CachedNetworkImage(
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 imageUrl: imageUrl(url),
                 errorWidget: (context, url, error) => const Icon(
                   Icons.error,
