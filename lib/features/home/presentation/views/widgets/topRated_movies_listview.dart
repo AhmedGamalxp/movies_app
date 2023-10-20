@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/dummy1.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/listview_item.dart';
+import 'package:movies_app/features/home/presentation/views/widgets/movie_list_image.dart';
 
 class TopRatedMoviesListView extends StatelessWidget {
   const TopRatedMoviesListView({super.key});
@@ -11,7 +11,7 @@ class TopRatedMoviesListView extends StatelessWidget {
       height: 120,
       child: ListView.separated(
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.only(left: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, indext) {
             return const MovieListImage();
