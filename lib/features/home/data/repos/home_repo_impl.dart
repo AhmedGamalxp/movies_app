@@ -36,59 +36,59 @@ class HomeRepoImpl implements HomeRepo {
     }
   }
 
-  // @override
-  // Future<Either<Failure, List<MovieModel>>> fetchPopularMovies() async {
-  //   try {
-  //     var data = await apiService.get(endPoint: 'popular');
-  //     List<MovieModel> movies = [];
-  //     for (var item in data['items']) {
-  //       try {
-  //         movies.add(MovieModel.fromJson(item));
-  //       } catch (e) {
-  //         movies.add(MovieModel.fromJson(item));
-  //       }
-  //     }
+  @override
+  Future<Either<Failure, List<NowPlayingModel>>> fetchPopularMovies() async {
+    try {
+      var data = await apiService.get(endPoint: 'popular');
+      List<NowPlayingModel> movies = [];
+      for (var item in data['results']) {
+        try {
+          movies.add(NowPlayingModel.fromJson(item));
+        } catch (e) {
+          movies.add(NowPlayingModel.fromJson(item));
+        }
+      }
 
-  //     return right(movies);
-  //   } catch (e) {
-  //     if (e is DioException) {
-  //       return left(
-  //         ServerFailure.fromDioError(e),
-  //       );
-  //     }
-  //     return left(
-  //       ServerFailure(
-  //         e.toString(),
-  //       ),
-  //     );
-  //   }
-  // }
+      return right(movies);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
+  }
 
-  // @override
-  // Future<Either<Failure, List<MovieModel>>> fetchTopRatedMovies() async {
-  //   try {
-  //     var data = await apiService.get(endPoint: 'top_rated');
-  //     List<MovieModel> movies = [];
-  //     for (var item in data['items']) {
-  //       try {
-  //         movies.add(MovieModel.fromJson(item));
-  //       } catch (e) {
-  //         movies.add(MovieModel.fromJson(item));
-  //       }
-  //     }
+  @override
+  Future<Either<Failure, List<NowPlayingModel>>> fetchTopRatedMovies() async {
+    try {
+      var data = await apiService.get(endPoint: 'top_rated');
+      List<NowPlayingModel> movies = [];
+      for (var item in data['results']) {
+        try {
+          movies.add(NowPlayingModel.fromJson(item));
+        } catch (e) {
+          movies.add(NowPlayingModel.fromJson(item));
+        }
+      }
 
-  //     return right(movies);
-  //   } catch (e) {
-  //     if (e is DioException) {
-  //       return left(
-  //         ServerFailure.fromDioError(e),
-  //       );
-  //     }
-  //     return left(
-  //       ServerFailure(
-  //         e.toString(),
-  //       ),
-  //     );
-  //   }
-  // }
+      return right(movies);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
+  }
 }

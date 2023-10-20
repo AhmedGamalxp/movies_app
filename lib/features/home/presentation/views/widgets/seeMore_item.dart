@@ -20,7 +20,9 @@ class SeeMoreItem extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                const MovieListImage(),
+                MovieListImage(
+                  url: moviesList[0].backdropPath!,
+                ),
                 const SizedBox(
                   width: 16,
                 ),

@@ -5,8 +5,9 @@ import 'package:movies_app/core/constants.dart';
 import 'package:movies_app/core/dummy1.dart';
 
 class MovieListImage extends StatelessWidget {
-  const MovieListImage({super.key, this.ontap});
+  const MovieListImage({super.key, this.ontap, required this.url});
   final void Function()? ontap;
+  final String url;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +22,7 @@ class MovieListImage extends StatelessWidget {
               aspectRatio: 2.8 / 4,
               child: CachedNetworkImage(
                 fit: BoxFit.fill,
-                imageUrl: imageUrl(moviesList[0].backdropPath!),
+                imageUrl: imageUrl(url),
                 errorWidget: (context, url, error) => const Icon(
                   Icons.error,
                 ),
