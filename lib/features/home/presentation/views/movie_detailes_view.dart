@@ -2,14 +2,11 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:movies_app/core/dummy1.dart';
 import 'package:movies_app/core/utils/app_router.dart';
 import 'package:movies_app/core/widgets/custom_error_widget.dart';
 import 'package:movies_app/features/home/presentation/manager/movie_detailes_cubit/movie_detailes_cubit.dart';
-import 'package:movies_app/features/home/presentation/manager/recommendations_cubit/recommendatins_cubit.dart';
 
 import 'package:movies_app/features/home/presentation/views/widgets/appBar_background.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/gridview_item.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/movie_detailes.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/recommendation_gridview.dart';
 
@@ -72,12 +69,6 @@ class MovieDetailesBody extends StatelessWidget {
                 ),
               ),
               const RecommendationGridview(),
-              // const SliverPadding(
-              //   padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 24.0),
-              //   sliver: SliverToBoxAdapter(
-              //     child: RecommendationGridview(),
-              //   ),
-              // ),
             ],
           );
         } else if (state is MovieDetailesFailure) {

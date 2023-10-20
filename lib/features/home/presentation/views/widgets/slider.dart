@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/constants.dart';
 import 'package:movies_app/core/utils/app_router.dart';
+import 'package:movies_app/core/utils/shimmer_items.dart';
 import 'package:movies_app/core/widgets/custom_error_widget.dart';
 import 'package:movies_app/features/home/presentation/manager/now_playing_cubit/now_playing_cubit.dart';
 
@@ -111,8 +112,9 @@ class MoviesSlider extends StatelessWidget {
         } else if (state is NowPlayingFailure) {
           return CustomErrorWidget(errMassage: state.errMassage);
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: sliderShemmer(),
           );
         }
       },

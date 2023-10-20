@@ -3,7 +3,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/constants.dart';
-import 'package:movies_app/core/dummy1.dart';
 import 'package:movies_app/core/utils/app_router.dart';
 import 'package:movies_app/features/home/data/models/movie_model.dart';
 import 'package:shimmer/shimmer.dart';

@@ -9,7 +9,6 @@ import 'package:movies_app/features/home/presentation/manager/top_rated_cubit/to
 import 'package:movies_app/features/home/presentation/views/home_view.dart';
 import 'package:movies_app/features/home/presentation/views/movie_detailes_view.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/popular_seeMore_listview.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/test.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/topRated_seeMore_listview.dart';
 import 'package:movies_app/features/splash/presentation/views/splash_view.dart';
 
@@ -63,24 +62,6 @@ abstract class AppRouter {
             getIt.get<HomeRepoImpl>(),
           )..fetchTopRatedMovies(),
           child: const TopRatedSeeMoreListView(),
-        ),
-      ),
-      GoRoute(
-        path: kTest,
-        builder: (context, state) => MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => MovieDetailesCubit(
-                getIt.get<HomeRepoImpl>(),
-              )..fetchMovieDetails(state.extra as int),
-            ),
-            BlocProvider(
-              create: (context) => RecommendatinsCubit(
-                getIt.get<HomeRepoImpl>(),
-              )..fetchRecommendations(state.extra as int),
-            ),
-          ],
-          child: const Test(),
         ),
       ),
     ],
