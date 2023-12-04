@@ -22,11 +22,9 @@ it's a very simple app showing you trending movies and their rating and descript
 - version controll
 - postman
 ## Screenshots
-<img src="screen shots/m1.jpeg" width=300 hight=400>
-<img src="screen shots/m2.jpeg" width=300 hight=400>
-<img src="screen shots/m3.jpeg" width=300 hight=400>
-<img src="screen shots/m4.jpeg" width=300 hight=400>
-<img src="screen shots/m5.jpeg" width=300 hight=400>
+<img src="screen shots/m1.jpeg" width=300 hight=400>    <img src="screen shots/m2.jpeg" width=300 hight=400>      <img src="screen shots/m3.jpeg" width=300 hight=400>
+<img src="screen shots/m4.jpeg" width=300 hight=400>    <img src="screen shots/m5.jpeg" width=300 hight=400>
+
 
 
 
