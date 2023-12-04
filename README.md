@@ -22,14 +22,12 @@ it's a very simple app showing you trending movies and their rating and descript
 - version controll
 - postman
 ## Screenshots
+<img src="screen shots/m1.jpeg" width=300 hight=400>
+<img src="screen shots/m2.jpeg" width=300 hight=400>
+<img src="screen shots/m3.jpeg" width=300 hight=400>
+<img src="screen shots/m4.jpeg" width=300 hight=400>
+<img src="screen shots/m5.jpeg" width=300 hight=400>
 
-![App Screenshot](https://github.com/AhmedGamalxp/movies_app/blob/main/screen%20shots/m1.jpeg?raw=true/=468x300?text=App+Screenshot+Here)
 
-![App Screenshot](https://github.com/AhmedGamalxp/movies_app/blob/main/screen%20shots/m2.jpeg?raw=true/=468x300?text=App+Screenshot+Here) 
 
-![App Screenshot](https://github.com/AhmedGamalxp/movies_app/blob/main/screen%20shots/m3.jpeg?raw=true/=468x300?text=App+Screenshot+Here)
-
-![App Screenshot](https://github.com/AhmedGamalxp/movies_app/blob/main/screen%20shots/m4.jpeg?raw=true/=468x300?text=App+Screenshot+Here)
-
-![App Screenshot](https://github.com/AhmedGamalxp/movies_app/blob/main/screen%20shots/m5.jpeg?raw=true/=468x300?text=App+Screenshot+Here)
 
